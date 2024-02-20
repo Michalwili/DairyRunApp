@@ -7,7 +7,7 @@ import pl.mw.model.Training;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DairyRunProApp {
+public class DiaryRunApp {
 
     public static void main(String[] args) {
 
