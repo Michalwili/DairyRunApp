@@ -19,10 +19,9 @@ public abstract class Training {
 
     @Override
     public String toString() {
-        return "Training Type: " + trainingType + '\'' +
-                ", date: " + date + '\'' +
-                ", duration: " + duration + '\'' +
-                ", description: " + description + '\'' +
-                '}';
+        return "Training Type: " + trainingType  +
+                ", date: " + date  +
+                ", duration: " + duration  +
+                ", description: " + description;
     }
 }

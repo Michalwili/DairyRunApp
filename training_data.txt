@@ -1,5 +1,3 @@
-Training Type: Run', date: 2024-03-10', duration: 01:00', description: short run'}, distance: 5.0 km
-Training Type: Run', date: 2023-02-10', duration: 01:00', description: long run'}, distance: 10.0 km
-Training Type: Gym', date: 2023-03-10', duration: 01:10', description: endurance'}
-Training Type: Stretching', date: 2024-01-01', duration: 00:40', description: short stretching'}
-Training Type: Run', date: 2023-10-02', duration: 02:20', description: Long run'}, distance: 24.4 km
+Training Type: Run, date: 2024-02-20, duration: 01:15, description: Easy run, distance: 12.0 km
+Training Type: Gym, date: 2024-01-04, duration: 01:30, description: Morning gym
+Training Type: Stretching, date: 2024-02-22, duration: 00:30, description: Evening stretching
