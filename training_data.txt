@@ -1,3 +1,0 @@
-Training Type: Run, date: 2024-02-20, duration: 01:15, description: Easy run, distance: 12.0 km
-Training Type: Gym, date: 2024-01-04, duration: 01:30, description: Morning gym
-Training Type: Stretching, date: 2024-02-22, duration: 00:30, description: Evening stretching
