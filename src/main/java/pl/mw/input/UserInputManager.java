@@ -32,8 +32,16 @@ public class UserInputManager {
                 if (trainingType.equalsIgnoreCase("quit")) {
                     return null;
                 }
+
                 System.out.println("Enter the date (YYYY-MM-DD): ");
-                LocalDate date = parseLocalDate(scanner.nextLine());
+                LocalDate date = null;
+                while (date == null) {
+                    try {
+                        date = parseLocalDate(scanner.nextLine());
+                    } catch (DateTimeException e) {
+                        System.out.println("Invalid date format. Please enter a valid date (YYYY-MM-DD): ");
+                    }
+                }
 
                 System.out.println("Enter the duration (HH:MM): ");
                 LocalTime duration = parseLocalTime(scanner.nextLine());

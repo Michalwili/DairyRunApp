@@ -28,6 +28,7 @@ public class DiaryRunApp {
         }
 
         String fileName = "training_data.txt";
-        TrainingWriter.writeToTxtFile(trainingList, fileName);
+        TrainingWriter trainingWriter = new TrainingWriter(fileName);
+        trainingWriter.writeToTxtFile(trainingList);
     }
 }

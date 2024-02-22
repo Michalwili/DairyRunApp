@@ -7,7 +7,7 @@ public class Run extends Training {
     private double distance;
 
     public Run(LocalDate date, LocalTime duration, String description, double distance) {
-        super("Run", date, duration, description);
+        super(TrainingType.RUN,date, duration, description);
         this.distance = distance;
     }
 

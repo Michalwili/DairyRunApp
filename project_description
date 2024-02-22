@@ -2,7 +2,7 @@ Opis aplikacji:
 - umożliwia użytkownikowi prowadzenie dziennika biegowego
 
 Wymagania:
-- użytkownik loguje się do aplikacji używając loginu i hasła // TODO
+- użytkownik loguje się do aplikacji używając loginu i hasła
 - użytkownik wprowadza kolejno dane treningowe takie jak
     - rodzaj treningu (bieg, stretching, siłownia)
     - data
@@ -10,8 +10,8 @@ Wymagania:
     - czas
     - opis
 - istnieje możliwośc wpisania kilku treningów w jednym dniu
-- dla rodzaju treningu: bieg, program oblicza średnią prędkośc biegu (peace) // TODO
-- statystyki (program wyświetla statystyki takie jak, // TODO
+- dla rodzaju treningu: bieg, program oblicza średnią prędkośc biegu (peace)
+- statystyki (program wyświetla statystyki takie jak,
     - łączny czas treningu dla każdej kategorii
     - łączny pokonany dystans
     - ilość każdego rodzaju treningu np ( ilość wykonanych treningów: bieg - 3 )
