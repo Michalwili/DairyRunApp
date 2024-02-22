@@ -4,7 +4,10 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import pl.mw.data.TrainingWriter;
 import pl.mw.model.Gym;
 import pl.mw.model.Run;
 import pl.mw.model.Stretching;
@@ -13,6 +16,7 @@ import pl.mw.model.Training;
 
 public class UserInputManager {
     private final Scanner scanner;
+    private final Logger logger = Logger.getLogger(UserInputManager.class.getName());
 
     public UserInputManager() {
         this.scanner = new Scanner(System.in);
@@ -34,17 +38,9 @@ public class UserInputManager {
                 }
 
                 System.out.println("Enter the date (YYYY-MM-DD): ");
-                LocalDate date = null;
-                while (date == null) {
-                    try {
-                        date = parseLocalDate(scanner.nextLine());
-                    } catch (DateTimeException e) {
-                        System.out.println("Invalid date format. Please enter a valid date (YYYY-MM-DD): ");
-                    }
-                }
-
+                LocalDate date = readDateFromInput();
                 System.out.println("Enter the duration (HH:MM): ");
-                LocalTime duration = parseLocalTime(scanner.nextLine());
+                LocalTime duration = readDurationFromInput();
 
                 System.out.println("Enter the description: ");
                 String description = scanner.nextLine();
@@ -52,11 +48,17 @@ public class UserInputManager {
                 if (trainingType.equalsIgnoreCase("Run")) {
                     System.out.println("Enter the distance (in kilometers): ");
                     double distance = parseDouble(scanner.nextLine());
-                    return new Run(date, duration, description, distance);
+                    training = new Run(date, duration, description, distance);
+                    logger.log(Level.INFO, "Create RUN: " + training);
+                    return training;
                 } else if (trainingType.equalsIgnoreCase("Gym")) {
-                    return new Gym(date, duration, description);
+                    training = new Gym(date, duration, description);
+                    logger.log(Level.INFO, "Create GYM: " + training);
+                    return training;
                 } else if (trainingType.equalsIgnoreCase("Stretching")) {
-                    return new Stretching(date, duration, description);
+                    training = new Stretching(date, duration, description);
+                    logger.log(Level.INFO, "Create STRETCHING: " + training);
+                    return training;
                 } else {
                     throw new IllegalArgumentException("Invalid training type: " + trainingType);
                 }
@@ -69,6 +71,30 @@ public class UserInputManager {
             }
         }
         return training;
+    }
+
+    private LocalTime readDurationFromInput() {
+        LocalTime duration = null;
+        while (duration == null) {
+            try {
+                duration = parseLocalTime(scanner.nextLine());
+            } catch (DateTimeException e) {
+                System.out.println("Invalid time format. Please enter a valid time (HH:MM): ");
+            }
+        }
+        return duration;
+    }
+
+    private LocalDate readDateFromInput() {
+        LocalDate date = null;
+        while (date == null) {
+            try {
+                date = parseLocalDate(scanner.nextLine());
+            } catch (DateTimeException e) {
+                System.out.println("Invalid date format. Please enter a valid date (YYYY-MM-DD): ");
+            }
+        }
+        return date;
     }
 
     private double parseDouble(String input) {
