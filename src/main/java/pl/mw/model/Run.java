@@ -11,8 +11,17 @@ public class Run extends Training {
         this.distance = distance;
     }
 
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
+
     @Override
     public String toString() {
         return super.toString() + ", distance: " + distance + " km";
     }
 }
+

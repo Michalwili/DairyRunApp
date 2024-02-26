@@ -14,6 +14,8 @@ public class DiaryRunApp {
         UserInputManager userInputManager = new UserInputManager();
         List<Training> trainingList = new ArrayList<>();
 
+
+
         while (true) {
             Training training = userInputManager.nextTraining();
             if (training == null) {
@@ -30,5 +32,7 @@ public class DiaryRunApp {
         String fileName = "training_data.txt";
         TrainingWriter trainingWriter = new TrainingWriter(fileName);
         trainingWriter.writeToTxtFile(trainingList);
+
     }
-}
+    }
+
